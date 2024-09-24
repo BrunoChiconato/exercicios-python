@@ -2,7 +2,14 @@ import pandas as pd # type: ignore
 import random # type: ignore
 from faker import Faker # type: ignore
 
-def gerar_dados_usuarios(num_linhas: int):
+def gerar_dados_usuarios(num_linhas: int, caminho: str) -> None:
+    """
+    Função que gera dados aleatórios de Nome e E-mail utilizando a biblioteca Faker e
+    salva como um arquivo csv utilizando a biblioteca Pandas.
+
+    :params num_linhas: Número de linhas totais que o usuário deseja que a base tenha.
+    :params caminho: Caminho onde a base será salva. 
+    """
     fake = Faker("pt-BR")
     df = pd.DataFrame()
 
@@ -19,10 +26,4 @@ def gerar_dados_usuarios(num_linhas: int):
 
     df["E-mail"] = lista_emails
 
-    return print(df.head(num_linhas))
-
-def main():
-    gerar_dados_usuarios(20)
-
-if __name__ == "__main__":
-    main()
+    df.to_csv(path_or_buf = caminho, index = False, sep = ",", encoding = "utf-8")

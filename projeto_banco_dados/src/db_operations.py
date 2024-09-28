@@ -120,7 +120,7 @@ def db_retrieve_data(conexao):
         print("Consulta realizada com sucesso!")
 
     except Exception as erro:
-        print(f"Erro ao tentar inserir dados na tabela: {erro}")
+        print(f"Erro ao tentar consultar a tabela: {erro}")
     
     finally:
         cursor.close()

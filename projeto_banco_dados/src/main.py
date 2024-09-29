@@ -11,7 +11,5 @@ def main():
     print("Os funcionários do departamento de 'Vendas' são:")
     [print(f"- {tupla[0]}") for tupla in resultado]
 
-
-
 if __name__ == '__main__':
     main()

@@ -1,10 +1,11 @@
-from utils import requisicao_api, extrair_data_consulta, extrair_preco_bitcoin, criar_arquivo_txt, escrever_preco_data_txt
+#from utils import requisicao_api, extrair_data_consulta, extrair_preco_bitcoin, criar_arquivo_txt, escrever_preco_data_txt
+from utils_using_loguru import requisicao_api, extrair_data_consulta, extrair_preco_bitcoin, criar_arquivo_txt, escrever_preco_data_txt
 
 def main():
     url: str = 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json'
     processed_path: str = './data/processed/preco_bitcoin.txt'
 
-    # criar_arquivo_txt(processed_path)
+    criar_arquivo_txt(processed_path)
 
     json_file = requisicao_api(url)
 
